@@ -6,7 +6,9 @@ import (
 
 type ConvertUseCase struct{}
 
-func (my *ConvertUseCase) Convert(source *Source) (*sarif.Sarif, error) {
+const OSVScanner = "osv-scanner"
+
+func (my *ConvertUseCase) Convert(source *Source) (*sarif.Root, error) {
 	if source == nil {
 		return nil, ErrorNilSource
 	}
@@ -15,5 +17,17 @@ func (my *ConvertUseCase) Convert(source *Source) (*sarif.Sarif, error) {
 		return nil, err
 	}
 
-	return &sarif.Sarif{}, nil
+	return &sarif.Root{
+		Runs: []sarif.Run{
+			{
+				Tool: sarif.Tool{
+					Driver: sarif.ToolComponent{
+						Name: OSVScanner,
+					},
+				},
+			},
+		},
+		Schema:  sarif.CurrentSchema,
+		Version: sarif.CurrentVersion,
+	}, nil
 }
