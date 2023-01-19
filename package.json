@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "format": "sort-package-json && prettier . --write",
+    "lint": "sort-package-json --check && prettier . --check",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "husky": "8.0.3",
+    "prettier": "2.8.1",
+    "sort-package-json": "2.1.0"
+  }
+}
