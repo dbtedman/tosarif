@@ -1,4 +1,4 @@
-# [ToSARIF](https://github.com/dbtedman/tosarif) Contributing
+# [ToSARIF](https://github.com/dbtedman/tosarif) Contributing Guide
 
 -   [Getting Started](#getting-started)
 -   [Verification](#verification)
@@ -45,6 +45,9 @@ make test
 
 ### Stack
 
+> ⚠️ indicates a component not yet implemented.
+
+-   [⚠️ JSONSchema (github.com)](https://github.com/santhosh-tekuri/jsonschema)
 -   [✅ Cobra (cobra.dev)](https://cobra.dev)
 -   [✅ CodeQL (codeql.github.com)](https://codeql.github.com)
 -   [✅ Dependabot (docs.github.com)](https://docs.github.com/en/code-security/dependabot)
