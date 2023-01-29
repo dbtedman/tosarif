@@ -58,10 +58,8 @@ jobs:
               with:
                   go-version-file: "./go.mod"
             - run: "make install"
-            - uses: "google/osv-scanner@a6c6cd756e0cf4fd858398976208145cb23e707b"
-              with:
-                  to-scan: "./"
-                  version: "1.1.0"
+            - run: "go install github.com/google/osv-scanner/cmd/osv-scanner@v1.1.0"
+            - run: "make sast_osv"
 
     snyk:
         permissions:
