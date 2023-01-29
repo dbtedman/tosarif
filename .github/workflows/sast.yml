@@ -61,6 +61,7 @@ jobs:
             - uses: "google/osv-scanner@a6c6cd756e0cf4fd858398976208145cb23e707b"
               with:
                   to-scan: "./"
+                  version: "1.1.0"
 
     snyk:
         permissions:
