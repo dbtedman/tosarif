@@ -37,7 +37,7 @@ jobs:
                   name: "SARIF file"
                   path: "results.sarif"
                   retention-days: 5
-            - uses: "github/codeql-action/upload-sarif@a34ca99b4610d924e04c68db79e503e1f79f9f02"
+            - uses: "github/codeql-action/upload-sarif@3ebbd71c74ef574dbc558c82f70e52732c8b44fe"
               with:
                   sarif_file: "results.sarif"
 
@@ -85,7 +85,7 @@ jobs:
               continue-on-error: true
               env:
                   SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-            - uses: "github/codeql-action/upload-sarif@a34ca99b4610d924e04c68db79e503e1f79f9f02"
+            - uses: "github/codeql-action/upload-sarif@3ebbd71c74ef574dbc558c82f70e52732c8b44fe"
               with:
                   sarif_file: "snyk.sarif"
 
@@ -97,7 +97,7 @@ jobs:
             security-events: write
         steps:
             - uses: "actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c"
-            - uses: "github/codeql-action/init@a34ca99b4610d924e04c68db79e503e1f79f9f02"
+            - uses: "github/codeql-action/init@3ebbd71c74ef574dbc558c82f70e52732c8b44fe"
               with:
                   languages: "go"
             - uses: "pnpm/action-setup@c3b53f6a16e57305370b4ae5a540c2077a1d50dd"
@@ -111,4 +111,4 @@ jobs:
               with:
                   go-version-file: "./go.mod"
             - run: "make install"
-            - uses: "github/codeql-action/analyze@a34ca99b4610d924e04c68db79e503e1f79f9f02"
+            - uses: "github/codeql-action/analyze@3ebbd71c74ef574dbc558c82f70e52732c8b44fe"
